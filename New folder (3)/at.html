@@ -1,0 +1,211 @@
+﻿ <html>
+<head>
+  <title>الامارات</title>
+</head>
+
+<b><font face="Kunstler Script" size="5" color="#FFFF00"><br><marquee bgcolor="#0000FF" style="color: #FFFFFF">اللهم صلي وسلم على اشرف الرجال محمد بن عبدالله</marquee></font></b>
+
+
+<h1 align="center"><font color="red blue">بسم الله الرحمن الرحيم</h1></font>
+<br><br><br><center><br><TABLE BORDER=6 WIDTH=400 Background="55.jpg"><TR><TD ALIGN=CENTER><h1><font size="5" face="monotype koufi" color="red"> <br><br><br><br>كليه الامارات للعوم والتكنولوجيا<br><br><br><font size="32" face="simplified arabic" color="#fef1bc"></marquee></TD></TR></TABLE></center><br><br><br>
+<body bgcolor="grey black">
+  <form name="where">
+ <table border="0" width="200" cellspacing="0" cellpadding="3">
+<tr>
+    <td width="100%">
+<select name="city" size="5" onchange="updateclock(this);"> 
+<option selected>التوقيت المحلي</option>
+<option value="3">السعودية</option>
+<option value="4">الإمارات</option>
+<option value="3">الكويت</option>
+<option value="3">لبنان</option>
+<option value="4">عمان</option>
+<option value="3">قطر</option>
+<option value="3">مصر</option>
+<option value="0">المغرب</option>
+<option value="1">تونس</option>
+<option value="3">السودان</option>
+<option value="0">لندن</option> 
+<option value="1">روما</option>
+<option value="7">بانكوك</option>
+<option value="8">هونكغ كونغ</option>
+<option value="9">طوكيو</option> 
+<option value="10">سيدني</option>
+<option value="12">فوجي</option>
+<option value="-10">هاواي</option>
+<option value="-8">سان فرانسيسكو</option> 
+<option value="-5">نيويورك</option>
+<option value="-7">فنزيولا</option>
+
+</select>
+</td>
+  </tr>
+<tr>
+    <td width="100%">
+<script language="JavaScript">
+
+/*
+Drop Down World Clock- By JavaScript Kit (http://www.javascriptkit.com)
+Portions of code by Kurt @ http://www.btinternet.com/~kurt.grigg/javascript
+This credit notice must stay intact
+Visit our site at http://www.star28.com/ for more code
+*/
+
+if (document.all||document.getElementById)
+document.write('<span id="worldclock" style="font:bold 16px Arial;"></span><br>')
+
+zone=0;
+isitlocal=true;
+ampm='';
+
+function updateclock(z){
+zone=z.options[z.selectedIndex].value;
+isitlocal=(z.options[0].selected)?true:false;
+}
+
+function WorldClock(){
+now=new Date();
+ofst=now.getTimezoneOffset()/60;
+secs=now.getSeconds();
+sec=-1.57+Math.PI*secs/30;
+mins=now.getMinutes();
+min=-1.57+Math.PI*mins/30;
+hr=(isitlocal)?now.getHours():(now.getHours() + parseInt(ofst)) + parseInt(zone);
+hrs=-1.575+Math.PI*hr/6+Math.PI*parseInt(now.getMinutes())/360;
+if (hr < 0) hr+=24;
+if (hr > 23) hr-=24;
+ampm = (hr > 11)?"PM":"AM";
+statusampm = ampm.toLowerCase();
+
+hr2 = hr;
+if (hr2 == 0) hr2=12;
+(hr2 < 13)?hr2:hr2 %= 12;
+if (hr2<10) hr2="0"+hr2
+
+var finaltime=hr2+':'+((mins < 10)?"0"+mins:mins)+':'+((secs < 10)?"0"+secs:secs)+' '+statusampm;
+
+if (document.all)
+worldclock.innerHTML=finaltime
+else if (document.getElementById)
+document.getElementById("worldclock").innerHTML=finaltime
+else if (document.layers){
+document.worldclockns.document.worldclockns2.document.write(finaltime)
+document.worldclockns.document.worldclockns2.document.close()
+}
+
+
+setTimeout('WorldClock()',1000);
+}
+
+window.onload=WorldClock
+//-->
+</script>
+
+<!--Place holder for NS4 only-->
+<ilayer id="worldclockns" width=100% height=35><layer id="worldclockns2" width=100% height=35 left=0 top=0 style="font:bold 16px Arial;"></layer></ilayer>
+</td></tr>
+</table>
+</form>
+<h1 align="center"><font color="bright red">صــفحتي الاولـــى</h1></font>
+
+<h1 align="center"><font color="dark blue red">اسمر ملتحي</h1></font>
+
+ <script LANGUAGE="JavaScript">
+<!-- Begin
+
+///* Tell-a-friend script                                   */
+///* Carl Dimmer                                            */
+///* Translated By www.star28.com                           */
+///* Visit our site at http://www.star28.com/ for more code */
+
+var initialsubj="السلام عليكم"
+var initialmsg="مرحبا:\n .... أثناء تجولي في الانترنت وجدت هذا الموقع و أتمنى أن ينال اعجابك ....... تحياتي لك: "+window.location
+var good;
+function checkEmailAddress(field) {
+
+var goodEmail = field.value.match(/\b(^(\S+@).+((\.com)|(\.net)|(\.edu)|(\.mil)|(\.gov)|(\.org)|(\.info)|(\.sex)|(\.biz)|(\.aero)|(\.coop)|(\.museum)|(\.name)|(\.pro)|(\..{2,2}))$)\b/gi);
+if (goodEmail) {
+good = true;
+}
+else {
+alert('يرجى أدخال بريد الكتروني صحيح');
+field.focus();
+field.select();
+good = false;
+   }
+}
+u = window.location;
+function mailThisUrl() {
+good = false
+checkEmailAddress(document.eMailer.email);
+if (good) {
+//window.location = "mailto:"+document.eMailer.email.value+"?subject="+initialsubj+"&body="+document.title+" "+u;
+window.location = "mailto:"+document.eMailer.email.value+"?subject="+initialsubj+"&body="+initialmsg
+   }
+}
+//  End -->
+</script>
+    
+  <table borderColor="#000033" cellSpacing="3" cellPadding="2" width="250" border="1" bgcolor="#006699">
+<tr>
+          <td bgColor="#99FFFF">
+            <p align="center">
+<font color="#000000" face="tahoma" size="5">أخبر 
+        صديقك عن موقعي</FONT></P></TD></TR>
+<tr>
+          <td align="center"><form name="eMailer">
+     <input maxLength="25" type="text" name="email" size="20" value="اكتب البريد الالكتروني" onFocus="this.value=''" onMouseOver="window.status='Enter email address here and tell a friend about this site...'; return true" onMouseOut="window.status='';return true">
+        <input type="button" value="ارســـال" onMouseOver="window.status='Click to send an email (with this page address) to a friend! Enter email address above...'; return true" onMouseOut="window.status='';return true" onClick="mailThisUrl();" style="color: #FFFFFF; font-family: Tahoma; background-color: #660066; border: 0">
+           </form>
+</TD></TR>
+</TABLE>
+<h1 align="center"><font color="red blue">لــكــل مـجتــهـد نـــصـــيب </h1></font>
+<h1 align="center"><font color ="558ff5">ذوالعقل يشقى في النعيم بعقله واخو الجهالة بالشقاوة ينعم</h1></font><br> 
+<a href="mailto:atifbeko999@gmail.com"><h1 align="left"> راسلني عبر ايميل الخاص بي</a>
+
+
+<br> 
+</CENTER> 
+<br>
+<br><FONT style=" width:100%;filter:shadow(color=#cccc00,strength=10 
+
+);color:00000" face="andalus" size=10><h1 align="center">لكم الحب والتقدير</font>
+<center> 
+<br> 
+<font color="green" size="5"> 
+<br> 
+<center> 
+<br> 
+<DIV STYLE="width:350;height:70;filter:wave(strength=4, freq=2, lightstrength=40, add=0, phase=20)"><marquee direction="up" height="15" scrollamount="2"></marquee> 
+<br> 
+<BR>أهلا بك فى <a href="العنوان"> صفحة الملتحي </a>اتمنى أن تجد ماتبحث عنه وشكرا لك على الزياره</DIV></FONT><BR><BR><BR> 
+<br> 
+</html> 
+<br>
+
+<P><head><BR><title></title><BR></head><P><BODY onLoad="alert(' اهلا بكم في صفحه الملتحـــــــي');" onUnload="alert('نـــص الـــــوداع');" link="#FFA1000" vlink="#FFA1000 alink="#00FF95"><br><BR><BR><p><BR><br><BR> <center><BR><br><BR><font color=white><BR><br><BR><p><BR><br><P><br><BR><P> <BR><br><P><BR><p>
+
+<BR><IFRAME SRC="عنوان الموقع" WIDTH=540 HEIGHT=300></IFRAME><BR>
+
+<BR><DIV id=cdiv style="BACKGROUND-COLOR: bron"><BR><marquee direction="Up" scrollAmount="1.5"> <BR><BR><FONT size="22"><FONT COLOR="Blue"><BR><center><B><I><FONT face="Tahoma"><FONT COLOR="red">الملتحي</FONT c></FONT f></I></B></center> </FONT c></FONT <P><P> 
+<br>
+
+<br> 
+<br> 
+<body style="border: 5 solid #800000 "> 
+<br> 
+<br> 
+<br>
+
+<br><FONT style=" width:100%;filter:shadow(color=#13058f,strength=10 
+);color:ff0000" face="andalus" size=22>العاطفي</font>
+<img src="12345.jpg">
+
+
+<iframe width="100%" height="610" frameborder="0" allowfullscreen="" src="https://www.yalla-shoot.com/mobile/frame-20146.html" scrolling="no"></iframe>
+
+
+
+</body>
+</html>
+
